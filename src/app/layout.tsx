@@ -25,11 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Оставляем lang="en" по умолчанию, ThemeWrapper обновит его в браузере
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDFBF9]`}>
         <StoreProvider>
-          {/* ThemeWrapper управляет направлением (RTL/LTR) и шрифтами арабского языка */}
+        
           <ThemeWrapper>
             {children}
           </ThemeWrapper>

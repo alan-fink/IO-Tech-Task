@@ -6,7 +6,7 @@ interface GlobalState {
 }
 
 const initialState: GlobalState = {
-  language: 'en', // По умолчанию английский
+  language: 'en', 
   searchQuery: '',
 };
 
@@ -14,11 +14,11 @@ const globalSlice = createSlice({
   name: 'global',
   initialState,
   reducers: {
-    // Действие для смены языка
+    
     setLanguage: (state, action: PayloadAction<'en' | 'ar'>) => {
       state.language = action.payload;
     },
-    // Действие для сохранения поиска
+    
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },

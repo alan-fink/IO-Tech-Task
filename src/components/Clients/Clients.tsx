@@ -6,14 +6,14 @@ import { translations } from "@/lib/translations";
 
 export default function Clients() {
   const lang = useSelector((state: RootState) => state.global.language);
-  const t = translations[lang]; // <-- Берем словарь
+  const t = translations[lang]; 
   
   const clients = ["Company One", "Global Corp", "Tech Solutions", "Future Law", "Partner Group"];
 
   return (
     <section className="py-12 bg-[#3b2416] border-t border-white/5">
       <div className="container mx-auto px-6">
-        {/* Используем перевод */}
+        
         <p className="text-center text-white/40 text-sm uppercase tracking-widest mb-8 font-medium">
           {t.clients?.title || "Trusted by leading companies"} 
         </p>

@@ -103,7 +103,7 @@ export default function Header({
 
               <div className="flex items-center gap-6">
                 
-                {/* --- ИСПРАВЛЕННАЯ КНОПКА ПОИСКА (SVG) --- */}
+                
                 <button 
                   onClick={() => setIsSearchOpen(true)} 
                   className="opacity-80 hover:opacity-100 transition-transform hover:scale-110"

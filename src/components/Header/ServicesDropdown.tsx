@@ -9,7 +9,7 @@ export default function ServicesDropdown() {
   const lang = useSelector((state: RootState) => state.global.language);
   const t = translations[lang].servicesDropdown;
 
-  // Функция превращает "Legal Consultation Services" -> "legal-consultation-services"
+  
   const createSlug = (text: string) => {
     return text.toLowerCase().replace(/\s+/g, '-');
   };
@@ -32,7 +32,7 @@ export default function ServicesDropdown() {
   return (
     <div className="fixed top-24 left-0 w-full h-[55vh] bg-[#3b2416] z-40 transition-300 duration-300 ease-out shadow-2xl border-t border-white/10">
       <div className="container mx-auto px-12 py-16 text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-sm overflow-y-auto h-full">
-        {/* Рендерим колонки через функцию */}
+        
         {renderList(t.col1)}
         {renderList(t.col2)}
         {renderList(t.col3)}

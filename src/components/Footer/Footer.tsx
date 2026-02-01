@@ -12,12 +12,12 @@ export default function Footer() {
   const lang = useSelector((state: RootState) => state.global.language);
   const t = translations[lang].footer;
 
-  // --- ЛОГИКА FORMIK ---
+  // FORMIK 
   const formik = useFormik({
     initialValues: {
       email: '',
     },
-    // Правила валидации через Yup с переводами
+   
     validationSchema: Yup.object({
       email: Yup.string()
         .email(t.validation.email)
@@ -34,10 +34,10 @@ export default function Footer() {
       
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-32">
         
-        {/* --- ВЕРХНЯЯ ЧАСТЬ --- */}
+        
         <div className="flex flex-col lg:flex-row items-center lg:justify-end gap-8 mb-12">
           
-          {/* Блок подписки (FORM) */}
+          
           <div className="w-full max-w-xs lg:max-w-[22rem]">
             <form 
               onSubmit={formik.handleSubmit}
@@ -70,7 +70,7 @@ export default function Footer() {
             ) : null}
           </div>
 
-          {/* Контакты и Иконки */}
+          
           <div className="flex items-center gap-6">
             <span className="text-white/90 text-sm font-medium">{t.contacts}</span>
             
@@ -90,7 +90,7 @@ export default function Footer() {
 
         <hr className="border-white/20 mb-8" />
 
-        {/* --- НИЖНЯЯ ЧАСТЬ --- */}
+        
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-sm text-white/80 font-light">
           
           <nav className="flex flex-wrap justify-center gap-6 lg:gap-10">

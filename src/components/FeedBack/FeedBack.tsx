@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image'; // <-- Импорт Image
+import Image from 'next/image'; 
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { translations } from '@/lib/translations';
@@ -31,21 +31,21 @@ export default function FeedBack() {
           
           <div className="hidden lg:block"></div>
 
-          {/* Photo */}
+          {/* Ph */}
           <div className="shrink-0 pt-2">
-             {/* Замена img на Image */}
+             
              <div className="relative w-full max-w-xs lg:max-w-none lg:w-[30rem] lg:h-[30rem]">
                 <Image
                   src="/images/person.png"
                   alt="Client"
-                  width={480} // 30rem ~ 480px
+                  width={480} 
                   height={480}
                   className={`object-cover bg-[#533625] shadow-xl rounded-sm ${isRtl ? 'scale-x-[-1]' : ''}`} 
                 />
              </div>
           </div>
 
-            {/* Quote and controls */}
+            {/* Quote  */}
           <div className="flex flex-col h-full justify-between lg:pl-10 pt-4">
             
             <div className="max-w-4xl">
@@ -56,7 +56,7 @@ export default function FeedBack() {
 
             <div className="flex items-end justify-between w-full mt-10 lg:mt-0">
               
-              {/* (CEO) */}
+              {/* CEO */}
               <div className="pb-2"> 
                 <p className="font-bold text-white text-xl lg:text-2xl">{t.clientName}</p>
                 <p className="text-white/60 text-sm tracking-wide uppercase mt-1">{t.clientRole}</p>

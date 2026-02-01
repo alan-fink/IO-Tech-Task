@@ -16,22 +16,21 @@ export default function Hero({ servicesOpen }: HeroProps) {
   const t = translations[lang].hero;
   const isRtl = lang === 'ar';
 
-  // 1. Расширили массив слайдов текстами
+
   const slides = [
     {
       id: 1,
       type: "image",
       src: "/images/hero-bg.jpg",
-      // Если хочешь разный текст:
+      
       title: t.title, 
       desc: t.description 
     },
     {
       id: 2,
-      type: "video",
-      src: "/videos/hero-video.mp4", 
+      type: "image",
+      src: "/images/hero-bg.jpg", 
       poster: "/images/hero-bg.jpg",
-      // Для второго слайда можно другой текст (опционально)
       title: isRtl ? "استشارات فيديو حصرية" : "Exclusive Video Consultations",
       desc: isRtl ? "شاهد كيف نعمل بجد من أجلك" : "Watch how we work hard for you."
     },
@@ -39,7 +38,7 @@ export default function Hero({ servicesOpen }: HeroProps) {
 
   const [current, setCurrent] = useState(0);
 
-  // Логика переключения
+  
   const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
@@ -48,13 +47,13 @@ export default function Hero({ servicesOpen }: HeroProps) {
     return () => clearInterval(slideInterval);
   }, [current]);
 
-  // Текущий активный слайд
+  
   const activeSlide = slides[current];
 
   return (
     <section className="relative h-[850px] w-full overflow-hidden bg-[#1a0f0a]">
       
-      {/* РЕНДЕРИНГ ФОНА (ОСТАЕТСЯ ТЕМ ЖЕ) */}
+      
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -72,12 +71,12 @@ export default function Hero({ servicesOpen }: HeroProps) {
         </div>
       ))}
 
-      {/* Оверлей */}
+      
       {!servicesOpen && (
         <div className={`absolute inset-0 z-10 bg-gradient-to-r from-[#2a160c]/90 via-[#3b2416]/85 to-[#3b2416]/80 ${isRtl ? 'rotate-180' : ''}`} />
       )}
 
-      {/* СТРЕЛКИ */}
+      
       <button onClick={prevSlide} className={`absolute top-1/2 -translate-y-1/2 z-30 text-white text-5xl opacity-70 hover:opacity-100 p-2 ${isRtl ? 'right-6' : 'left-6'}`}>
         {isRtl ? '›' : '‹'}
       </button>
@@ -92,17 +91,17 @@ export default function Hero({ servicesOpen }: HeroProps) {
         ))}
       </div>
 
-      {/* КОНТЕНТ (ТЕПЕРЬ БЕРЕТСЯ ИЗ activeSlide) */}
+      
       <div className="relative z-20 h-full max-w-[1440px] mx-auto px-10 lg:px-32 flex items-center">
         <div className={`flex w-full items-center justify-between gap-10 ${isRtl ? 'flex-row-reverse' : 'flex-row'}`}>
           
           <div className={`max-w-xl ${isRtl ? 'text-right' : 'text-left'}`}>
-            {/* Ключ key={current} нужен, чтобы текст анимировался при смене слайда */}
+            
             <h1 key={`t-${current}`} className="text-white text-5xl font-semibold leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
-              {activeSlide.title} {/* <-- БЕРЕМ ТЕКСТ ИЗ СЛАЙДА */}
+              {activeSlide.title} 
             </h1>
             <p key={`d-${current}`} className="text-white/70 mt-6 max-w-md text-lg animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100">
-              {activeSlide.desc} {/* <-- БЕРЕМ ТЕКСТ ИЗ СЛАЙДА */}
+              {activeSlide.desc} 
             </p>
             
             <Link 

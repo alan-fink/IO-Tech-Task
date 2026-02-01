@@ -319,7 +319,7 @@ export default function ServiceDynamicPage() {
             <p>{content.intro}</p>
           </div>
 
-          {/* Render Sections if available */}
+          {/* Render */}
           {content.sections && (
             <div className="space-y-10 max-w-4xl">
                 {content.sections.map((section, idx) => (
